@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Popovers</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<div class="row" style="margin-top: 200px;">
+			<div class="col">
+				<button
+					class="btn btn-lg btn-primary"
+					data-bs-toggle="popover"
+					title="Titulo del popover"
+					data-bs-content="Lorem ipsum dolor sit amet."
+					data-bs-placement="top"
+				>
+					Popover Arriba
+				</button>
+
+				<button
+					class="btn btn-lg btn-primary"
+					data-bs-toggle="popover"
+					title="Titulo del popover"
+					data-bs-content="Lorem ipsum dolor sit amet."
+					data-bs-placement="bottom"
+				>
+					Popover Abajo
+				</button>
+
+				<button
+					class="btn btn-lg btn-primary"
+					data-bs-toggle="popover"
+					title="Titulo del popover"
+					data-bs-content="Lorem ipsum dolor sit amet."
+					data-bs-placement="left"
+				>
+					Popover Izquierda
+				</button>
+
+				<button
+					class="btn btn-lg btn-primary"
+					data-bs-toggle="popover"
+					title="Titulo del popover"
+					data-bs-content="Lorem ipsum dolor sit amet."
+					data-bs-placement="right"
+				>
+					Popover Derecha
+				</button>
+			</div>
+
+			<div class="col-12 mt-5">
+				<a
+					href="#"
+					role="button"
+					tabindex="0"
+					class="btn btn-lg btn-primary"
+					data-bs-toggle="popover"
+					title="Titulo del popover"
+					data-bs-content="Lorem ipsum dolor sit amet."
+					data-bs-placement="top"
+					data-bs-trigger="focus"
+				>
+					Popover Arriba
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script>
+		var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+		var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+			return new bootstrap.Popover(popoverTriggerEl)
+		})
+	</script>
+</body>
+</html>

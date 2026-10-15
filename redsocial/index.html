@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Red Social - Estilo Facebook</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="img/logo.png">
+
+  <!-- Bootstrap 5 CSS (Local with CDN fallback) -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       TOP NAVBAR
+       ======================================================================== -->
+  <nav class="navbar fixed-top fb-navbar d-flex justify-content-between align-items-center">
+    
+    <!-- Left: Brand & Search -->
+    <div class="d-flex align-items-center gap-2">
+      <a href="#" class="d-flex align-items-center text-decoration-none">
+        <img src="img/logo.png" alt="Logo" class="fb-logo rounded-circle">
+      </a>
+      
+      <div class="fb-search-box">
+        <i class="bi bi-search"></i>
+        <input type="text" class="fb-search-input" placeholder="Buscar en Red Social">
+      </div>
+
+      <!-- Mobile Offcanvas Toggle Button -->
+      <button class="fb-icon-btn d-lg-none ms-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenuOffcanvas" aria-controls="mobileMenuOffcanvas">
+        <i class="bi bi-list"></i>
+      </button>
+    </div>
+
+    <!-- Center: Main Navigation Links -->
+    <div class="fb-nav-tabs d-none d-md-flex">
+      <a href="#" class="fb-nav-link active" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Inicio">
+        <i class="bi bi-house-door-fill"></i>
+      </a>
+      <a href="#" class="fb-nav-link" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Páginas">
+        <i class="bi bi-flag"></i>
+      </a>
+      <a href="#" class="fb-nav-link" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Watch">
+        <i class="bi bi-play-btn"></i>
+      </a>
+      <a href="#" class="fb-nav-link" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Marketplace">
+        <i class="bi bi-shop"></i>
+      </a>
+      <a href="#" class="fb-nav-link" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Grupos">
+        <i class="bi bi-people"></i>
+      </a>
+    </div>
+
+    <!-- Right: Profile & Action Buttons -->
+    <div class="d-flex align-items-center gap-2">
+      <!-- User profile pill -->
+      <a href="#" class="fb-user-pill d-none d-sm-flex">
+        <img src="img/persona2.jpg" alt="Carlos" class="fb-avatar fb-avatar-sm">
+        <span>Carlos</span>
+      </a>
+
+      <!-- Menu Button -->
+      <button class="fb-icon-btn" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Menú">
+        <i class="bi bi-grid-3x3-gap-fill"></i>
+      </button>
+
+      <!-- Messenger Button -->
+      <button class="fb-icon-btn" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Messenger" onclick="document.querySelector('.fb-contact-item')?.click()">
+        <i class="bi bi-chat-dots-fill"></i>
+        <span class="fb-badge">2</span>
+      </button>
+
+      <!-- Notifications Button -->
+      <button class="fb-icon-btn" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Notificaciones" onclick="showToast('Tienes 3 notificaciones pendientes')">
+        <i class="bi bi-bell-fill"></i>
+        <span class="fb-badge">3</span>
+      </button>
+
+      <!-- Account Settings Dropdown -->
+      <div class="dropdown">
+        <button class="fb-icon-btn dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="bi bi-chevron-down"></i>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark shadow">
+          <li>
+            <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="#">
+              <img src="img/persona2.jpg" alt="Carlos" class="fb-avatar fb-avatar-sm">
+              <div>
+                <strong>Carlos Arturo</strong>
+                <div class="small text-secondary">Ver tu perfil</div>
+              </div>
+            </a>
+          </li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="#"><i class="bi bi-gear-fill me-2"></i> Configuración y privacidad</a></li>
+          <li><a class="dropdown-item" href="#"><i class="bi bi-question-circle-fill me-2"></i> Ayuda y asistencia</a></li>
+          <li><a class="dropdown-item" href="#"><i class="bi bi-moon-fill me-2"></i> Pantalla y accesibilidad</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-box-arrow-right me-2"></i> Cerrar sesión</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </nav>
+
+  <!-- ========================================================================
+       MAIN BODY (3-COLUMN LAYOUT)
+       ======================================================================== -->
+  <div class="container-fluid">
+    <div class="row">
+
+      <!-- ====================================================================
+           LEFT SIDEBAR (Navigation & Shortcuts)
+           ==================================================================== -->
+      <div class="col-lg-3 d-none d-lg-block fb-sidebar">
+        <!-- User Profile Link -->
+        <a href="#" class="fb-side-item">
+          <img src="img/persona2.jpg" alt="Carlos Arturo" class="fb-avatar fb-avatar-md">
+          <span>Carlos Arturo</span>
+        </a>
+
+        <!-- Menu Item: Amigos -->
+        <a href="#" class="fb-side-item">
+          <div class="fb-side-icon-wrap text-primary">
+            <i class="bi bi-people-fill"></i>
+          </div>
+          <span>Amigos</span>
+        </a>
+
+        <!-- Menu Item: Páginas -->
+        <a href="#" class="fb-side-item">
+          <div class="fb-side-icon-wrap text-warning">
+            <i class="bi bi-flag-fill"></i>
+          </div>
+          <span>Páginas</span>
+        </a>
+
+        <!-- Menu Item: Grupos -->
+        <a href="#" class="fb-side-item">
+          <div class="fb-side-icon-wrap text-info">
+            <i class="bi bi-person-lines-fill"></i>
+          </div>
+          <span>Grupos</span>
+        </a>
+
+        <!-- Menu Item: Marketplace -->
+        <a href="#" class="fb-side-item">
+          <div class="fb-side-icon-wrap text-success">
+            <i class="bi bi-shop"></i>
+          </div>
+          <span>Marketplace</span>
+        </a>
+
+        <!-- Menu Item: Watch -->
+        <a href="#" class="fb-side-item">
+          <div class="fb-side-icon-wrap text-danger">
+            <i class="bi bi-play-btn-fill"></i>
+          </div>
+          <span>Watch</span>
+        </a>
+
+        <!-- Menu Item: Eventos -->
+        <a href="#" class="fb-side-item">
+          <div class="fb-side-icon-wrap text-danger">
+            <i class="bi bi-calendar-event-fill"></i>
+          </div>
+          <span>Eventos</span>
+        </a>
+
+        <!-- Menu Item: Ver Más -->
+        <a href="#" class="fb-side-item">
+          <div class="fb-side-icon-wrap text-secondary">
+            <i class="bi bi-chevron-down"></i>
+          </div>
+          <span>Ver más</span>
+        </a>
+
+        <hr class="my-3 border-secondary" style="opacity: 0.25;">
+
+        <!-- Sidebar Legal & Info Footer -->
+        <div class="fb-side-footer">
+          <p class="mb-1">
+            <a href="#">Privacidad</a> · 
+            <a href="#">Condiciones</a> · 
+            <a href="#">Publicidad</a> · 
+            <a href="#">Opciones de anuncios</a> · 
+            <a href="#">Cookies</a> · 
+            <a href="#">Más</a>
+          </p>
+          <p class="mb-0 text-secondary">Red Social estilo Facebook &copy; 2026</p>
+        </div>
+      </div>
+
+
+      <!-- ====================================================================
+           CENTER FEED (Create Post + Posts Timeline)
+           ==================================================================== -->
+      <div class="col-12 col-md-10 col-lg-6 mx-auto pt-3">
+        
+        <!-- CARD: Create Post Trigger -->
+        <div class="fb-card p-3">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <img src="img/persona2.jpg" alt="Carlos" class="fb-avatar fb-avatar-md">
+            <button class="fb-create-input-btn" data-bs-toggle="modal" data-bs-target="#modalCreatePost">
+              ¿Qué estás pensando, Carlos?
+            </button>
+          </div>
+
+          <hr class="my-2 border-secondary" style="opacity: 0.25;">
+
+          <!-- Bottom Action Triggers -->
+          <div class="d-flex justify-content-between pt-1">
+            <button class="fb-card-action-btn" data-bs-toggle="modal" data-bs-target="#modalCreatePost">
+              <i class="bi bi-camera-video-fill text-danger fs-5"></i>
+              <span>Video</span>
+            </button>
+            <button class="fb-card-action-btn" data-bs-toggle="modal" data-bs-target="#modalCreatePost">
+              <i class="bi bi-images text-success fs-5"></i>
+              <span>Foto</span>
+            </button>
+            <button class="fb-card-action-btn" data-bs-toggle="modal" data-bs-target="#modalCreatePost">
+              <i class="bi bi-emoji-smile-fill text-warning fs-5"></i>
+              <span>Sentimiento</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- POSTS FEED CONTAINER -->
+        <div id="postsFeed">
+
+          <!-- POST 1: Stephanie Doe (Exact match with reference image) -->
+          <div class="fb-card" id="post-1">
+            <!-- Header -->
+            <div class="fb-post-header">
+              <div class="d-flex align-items-center gap-2">
+                <img src="img/persona2.jpg" alt="Stephanie Doe" class="fb-avatar fb-avatar-md">
+                <div>
+                  <a href="#" class="fb-post-author">Carlos Arturo</a>
+                  <div class="fb-post-time">
+                    <span>1hr</span>
+                    <span>·</span>
+                    <i class="bi bi-globe"></i>
+                  </div>
+                </div>
+              </div>
+              <button class="fb-icon-btn"><i class="bi bi-three-dots"></i></button>
+            </div>
+
+            <!-- Body text -->
+            <div class="fb-post-body">
+              <p class="mb-0">Lorem ipsum dolor sit amet.</p>
+            </div>
+
+            <!-- Post Media Image -->
+            <div class="fb-post-media">
+              <img src="img/paisaje1.jpg" alt="Paisaje Fjord" class="img-fluid">
+            </div>
+
+            <!-- Reactions Bar -->
+            <div class="fb-post-stats">
+              <div class="fb-reactions-count">
+                <span class="fb-reaction-icon fb-reaction-heart"><i class="bi bi-heart-fill"></i></span>
+                <span class="like-count" data-count="60">60</span>
+              </div>
+              <div>
+                <span class="comment-count" data-count="7">7 comentarios</span>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="d-flex justify-content-between px-2 py-1 border-top" style="border-color: var(--fb-border) !important;">
+              <button class="fb-card-action-btn btn-like">
+                <i class="bi bi-heart me-2"></i> Me gusta
+              </button>
+              <button class="fb-card-action-btn btn-toggle-comment">
+                <i class="bi bi-chat-left-text me-2"></i> Comentar
+              </button>
+              <button class="fb-card-action-btn btn-share" onclick="showShareToast()">
+                <i class="bi bi-share me-2"></i> Compartir
+              </button>
+            </div>
+
+            <!-- Comments Section -->
+            <div class="fb-comments-section">
+              <div class="fb-comments-list">
+                <!-- Comment 1 -->
+                <div class="d-flex align-items-start gap-2 mb-2">
+                  <img src="img/persona3.jpg" alt="Stephanie Doe" class="fb-avatar fb-avatar-sm mt-1">
+                  <div class="fb-comment-bubble">
+                    <div class="fb-comment-author">Stephanie Doe</div>
+                    <p class="fb-comment-text">¡Qué vista tan espectacular! ¿En dónde tomaste esa foto? 🏔️</p>
+                  </div>
+                </div>
+
+                <!-- Comment 2 -->
+                <div class="d-flex align-items-start gap-2 mb-2">
+                  <img src="img/persona5.jpg" alt="Manuel Doe" class="fb-avatar fb-avatar-sm mt-1">
+                  <div class="fb-comment-bubble">
+                    <div class="fb-comment-author">Manny Lopez</div>
+                    <p class="fb-comment-text">Impresionante paisaje Stephanie, ¡tienes que invitar la próxima vez!</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Input for new comment -->
+              <div class="d-flex align-items-center gap-2 mt-3">
+                <img src="img/persona2.jpg" alt="Carlos" class="fb-avatar fb-avatar-sm">
+                <div class="fb-comment-input-box">
+                  <input type="text" class="fb-comment-input" placeholder="Escribe un comentario y presiona Enter...">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- POST 2: Alejandro Doe -->
+          <div class="fb-card" id="post-2">
+            <!-- Header -->
+            <div class="fb-post-header">
+              <div class="d-flex align-items-center gap-2">
+                <img src="img/persona3.jpg" alt="Alejandro Doe" class="fb-avatar fb-avatar-md">
+                <div>
+                  <a href="#" class="fb-post-author">Stephanie Doe</a>
+                  <div class="fb-post-time">
+                    <span>3hr</span>
+                    <span>·</span>
+                    <i class="bi bi-globe"></i>
+                  </div>
+                </div>
+              </div>
+              <button class="fb-icon-btn"><i class="bi bi-three-dots"></i></button>
+            </div>
+
+            <!-- Body text -->
+            <div class="fb-post-body">
+              <p class="mb-0">Una escapada de fin de semana para reconectar con la naturaleza</p>
+            </div>
+
+            <!-- Post Media Image -->
+            <div class="fb-post-media">
+              <img src="img/paisaje2.jpg" alt="Bosque y Montañas" class="img-fluid">
+            </div>
+
+            <!-- Reactions Bar -->
+            <div class="fb-post-stats">
+              <div class="fb-reactions-count">
+                <span class="fb-reaction-icon fb-reaction-like"><i class="bi bi-hand-thumbs-up-fill"></i></span>
+                <span class="like-count" data-count="38">38</span>
+              </div>
+              <div>
+                <span class="comment-count" data-count="3">3 comentarios</span>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="d-flex justify-content-between px-2 py-1 border-top" style="border-color: var(--fb-border) !important;">
+              <button class="fb-card-action-btn btn-like">
+                <i class="bi bi-heart me-2"></i> Me gusta
+              </button>
+              <button class="fb-card-action-btn btn-toggle-comment">
+                <i class="bi bi-chat-left-text me-2"></i> Comentar
+              </button>
+              <button class="fb-card-action-btn btn-share" onclick="showShareToast()">
+                <i class="bi bi-share me-2"></i> Compartir
+              </button>
+            </div>
+
+            <!-- Comments Section -->
+            <div class="fb-comments-section">
+              <div class="fb-comments-list">
+                <div class="d-flex align-items-start gap-2 mb-2">
+                  <img src="img/persona4.jpg" alt="Cesar Doe" class="fb-avatar fb-avatar-sm mt-1">
+                  <div class="fb-comment-bubble">
+                    <div class="fb-comment-author">Cesar Doe</div>
+                    <p class="fb-comment-text">¡Buenísimo descanso Alejandro! Que disfrutes mucho.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Input for new comment -->
+              <div class="d-flex align-items-center gap-2 mt-3">
+                <img src="img/persona2.jpg" alt="Carlos" class="fb-avatar fb-avatar-sm">
+                <div class="fb-comment-input-box">
+                  <input type="text" class="fb-comment-input" placeholder="Escribe un comentario y presiona Enter...">
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div> <!-- /#postsFeed -->
+      </div>
+
+
+      <!-- ====================================================================
+           RIGHT SIDEBAR (Publicidad & Contactos)
+           ==================================================================== -->
+      <div class="col-lg-3 d-none d-lg-block fb-sidebar">
+        
+        <!-- Section: Publicidad -->
+        <div class="px-2">
+          <div class="fb-section-title">Publicidad</div>
+
+          <!-- Ad 1 (iMac / Workspace) -->
+          <a href="#" class="fb-ad-card">
+            <img src="img/ad1.jpg" alt="Publicidad Setup" class="fb-ad-img">
+            <div>
+              <div class="fb-ad-title">Setup minimalista para desarrolladores</div>
+              <div class="fb-ad-url">apple.com/mac</div>
+            </div>
+          </a>
+
+          <!-- Ad 2 (Concert / Party) -->
+          <a href="#" class="fb-ad-card">
+            <img src="img/ad2.jpg" alt="Publicidad Conciertos" class="fb-ad-img">
+            <div>
+              <div class="fb-ad-title">Festival de Verano 2026 - Boletos ya a la venta</div>
+              <div class="fb-ad-url">livefest.tickets</div>
+            </div>
+          </a>
+        </div>
+
+        <hr class="my-3 border-secondary" style="opacity: 0.25;">
+
+        <!-- Section:  -->
+        <div class="px-2">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <div class="fb-section-title mb-0">Contactos</div>
+            <div class="d-flex gap-2">
+              <button class="fb-icon-btn" style="width: 32px; height: 32px; font-size: 0.9rem;" title="Nueva sala"><i class="bi bi-camera-video-fill"></i></button>
+              <button class="fb-icon-btn" style="width: 32px; height: 32px; font-size: 0.9rem;" title="Buscar contacto"><i class="bi bi-search"></i></button>
+              <button class="fb-icon-btn" style="width: 32px; height: 32px; font-size: 0.9rem;" title="Opciones"><i class="bi bi-three-dots"></i></button>
+            </div>
+          </div>
+
+          <!-- Contact 1: -->
+          <div class="fb-contact-item" data-name="Stephanie Doee" data-avatar="img/persona3.jpg">
+            <div class="fb-avatar-container">
+              <img src="img/persona3.jpg" alt="Alejandro Doe" class="fb-avatar fb-avatar-md">
+              <span class="fb-online-badge"></span>
+            </div>
+            <span>Stephanie Doe</span>
+          </div>
+
+          <!-- Contact 2:  -->
+          <div class="fb-contact-item" data-name="Alejandro Doe" data-avatar="img/persona2.jpg">
+            <div class="fb-avatar-container">
+              <img src="img/persona1.jpg" alt="Stephanie Doe" class="fb-avatar fb-avatar-md">
+              <span class="fb-online-badge"></span>
+            </div>
+            <span>Alejandro Doe</span>
+          </div>
+
+          <!-- Contact 3: -->
+          <div class="fb-contact-item" data-name="Cesar Doe" data-avatar="img/persona4.jpg">
+            <div class="fb-avatar-container">
+              <img src="img/persona4.jpg" alt="Cesar Doe" class="fb-avatar fb-avatar-md">
+              <span class="fb-online-badge"></span>
+            </div>
+            <span>Cesar Doe</span>
+          </div>
+
+          <!-- Contact 4: Manuel Doe -->
+          <div class="fb-contact-item" data-name="Manuel Doe" data-avatar="img/persona5.jpg">
+            <div class="fb-avatar-container">
+              <img src="img/persona5.jpg" alt="Manuel Doe" class="fb-avatar fb-avatar-md">
+              <span class="fb-online-badge"></span>
+            </div>
+            <span>Manny Lopez</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ========================================================================
+       MODAL: CREATE NEW POST
+       ======================================================================== -->
+  <div class="modal fade" id="modalCreatePost" tabindex="-1" aria-labelledby="modalCreatePostLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content fb-modal-dark">
+        <div class="modal-header">
+          <h5 class="modal-title w-100 text-center fw-bold" id="modalCreatePostLabel">Crear publicación</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- User info -->
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <img src="img/persona2.jpg" alt="Carlos" class="fb-avatar fb-avatar-md">
+            <div>
+              <strong>Carlos Arturo</strong>
+              <div class="badge bg-secondary d-flex align-items-center gap-1 mt-1" style="font-size: 0.75rem;">
+                <i class="bi bi-globe"></i> Público
+              </div>
+            </div>
+          </div>
+
+          <!-- Textarea -->
+          <textarea id="postModalText" class="form-control bg-transparent text-white border-0 fs-5" rows="4" placeholder="¿Qué estás pensando, Carlos?" style="resize: none;"></textarea>
+
+          <!-- Select optional image -->
+          <div class="mt-3 p-2 border rounded" style="border-color: var(--fb-border) !important;">
+            <label class="form-label small text-secondary mb-1">Agregar imagen:</label>
+            <select id="postModalImage" class="form-select bg-dark text-white border-secondary">
+              <option value="">Sin imagen</option>
+              <option value="paisaje1.jpg">Paisaje 1 (Fiordo noruego)</option>
+              <option value="paisaje2.jpg">Paisaje 2 (Montaña y árboles)</option>
+              <option value="ad1.jpg">Espacio de trabajo Mac</option>
+              <option value="ad2.jpg">Concierto / Fiesta</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-footer border-0 pt-0">
+          <button type="button" id="btnPublishPost" class="btn btn-primary w-100 fw-bold py-2">Publicar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ========================================================================
+       FLOATING MESSENGER CHAT BOX
+       ======================================================================== -->
+  <div class="fb-chat-popup" id="chatPopup">
+    <div class="fb-chat-header">
+      <div class="d-flex align-items-center gap-2">
+        <div class="fb-avatar-container">
+          <img src="img/persona3.jpg" alt="Avatar" id="chatUserAvatar" class="fb-avatar fb-avatar-sm">
+          <span class="fb-online-badge"></span>
+        </div>
+        <div>
+          <strong id="chatUserName" class="text-white" style="font-size: 0.95rem;">Stephanie Doe</strong>
+          <div class="small text-success" style="font-size: 0.75rem;">Activo(a) ahora</div>
+        </div>
+      </div>
+      <div class="d-flex align-items-center gap-1">
+        <button class="fb-icon-btn" style="width: 28px; height: 28px; font-size: 0.8rem;"><i class="bi bi-telephone-fill"></i></button>
+        <button class="fb-icon-btn" style="width: 28px; height: 28px; font-size: 0.8rem;"><i class="bi bi-camera-video-fill"></i></button>
+        <button class="fb-icon-btn" id="btnCloseChat" style="width: 28px; height: 28px; font-size: 0.8rem;"><i class="bi bi-x-lg"></i></button>
+      </div>
+    </div>
+
+    <!-- Messages log -->
+    <div class="fb-chat-body" id="chatMessages">
+      <div class="fb-chat-msg fb-chat-msg-received">
+        ¡Hola Carlos! ¿Cómo estás hoy?
+      </div>
+    </div>
+
+    <!-- Chat input -->
+    <div class="fb-chat-footer">
+      <div class="fb-comment-input-box w-100">
+        <input type="text" id="chatInput" class="fb-comment-input" placeholder="Escribe un mensaje...">
+      </div>
+      <button class="btn btn-sm btn-primary rounded-circle" id="btnSendChat" style="width: 34px; height: 34px;">
+        <i class="bi bi-send-fill" style="font-size: 0.8rem;"></i>
+      </button>
+    </div>
+  </div>
+
+
+  <!-- ========================================================================
+       MOBILE OFFCANVAS MENU
+       ======================================================================== -->
+  <div class="offcanvas offcanvas-start bg-dark text-white" tabindex="-1" id="mobileMenuOffcanvas" aria-labelledby="mobileMenuOffcanvasLabel">
+    <div class="offcanvas-header border-bottom border-secondary">
+      <h5 class="offcanvas-title d-flex align-items-center gap-2" id="mobileMenuOffcanvasLabel">
+        <img src="img/logo.png" alt="Logo" class="fb-logo rounded-circle" width="32" height="32">
+        <span>Menú Red Social</span>
+      </h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <!-- User profile in offcanvas -->
+      <a href="#" class="fb-side-item mb-3">
+        <img src="img/persona1.jpg" alt="Carlos Arturo" class="fb-avatar fb-avatar-md">
+        <span>Carlos Arturo</span>
+      </a>
+
+      <div class="list-group list-group-flush mb-4">
+        <a href="#" class="list-group-item list-group-item-action bg-transparent text-white border-0 py-2 d-flex align-items-center gap-3">
+          <i class="bi bi-house-door-fill text-primary fs-5"></i> Inicio
+        </a>
+        <a href="#" class="list-group-item list-group-item-action bg-transparent text-white border-0 py-2 d-flex align-items-center gap-3">
+          <i class="bi bi-people-fill text-primary fs-5"></i> Amigos
+        </a>
+        <a href="#" class="list-group-item list-group-item-action bg-transparent text-white border-0 py-2 d-flex align-items-center gap-3">
+          <i class="bi bi-flag-fill text-warning fs-5"></i> Páginas
+        </a>
+        <a href="#" class="list-group-item list-group-item-action bg-transparent text-white border-0 py-2 d-flex align-items-center gap-3">
+          <i class="bi bi-person-lines-fill text-info fs-5"></i> Grupos
+        </a>
+        <a href="#" class="list-group-item list-group-item-action bg-transparent text-white border-0 py-2 d-flex align-items-center gap-3">
+          <i class="bi bi-shop text-success fs-5"></i> Marketplace
+        </a>
+        <a href="#" class="list-group-item list-group-item-action bg-transparent text-white border-0 py-2 d-flex align-items-center gap-3">
+          <i class="bi bi-play-btn-fill text-danger fs-5"></i> Watch
+        </a>
+        <a href="#" class="list-group-item list-group-item-action bg-transparent text-white border-0 py-2 d-flex align-items-center gap-3">
+          <i class="bi bi-calendar-event-fill text-danger fs-5"></i> Eventos
+        </a>
+      </div>
+
+      <div class="small text-secondary px-3">
+        <h6>Contactos Activos</h6>
+        <div class="d-flex flex-column gap-2 mt-2">
+          <div class="d-flex align-items-center gap-2">
+            <span class="fb-online-badge position-static d-inline-block"></span> Stephanie Doe
+          </div>
+          <div class="d-flex align-items-center gap-2">
+            <span class="fb-online-badge position-static d-inline-block"></span> Stephanie Doe
+          </div>
+          <div class="d-flex align-items-center gap-2">
+            <span class="fb-online-badge position-static d-inline-block"></span> Cesar Doe
+          </div>
+          <div class="d-flex align-items-center gap-2">
+            <span class="fb-online-badge position-static d-inline-block"></span> Manuel Doe
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ========================================================================
+       TOAST NOTIFICATION (For copy link, shares, etc.)
+       ======================================================================== -->
+  <div class="toast-container position-fixed bottom-0 start-50 translate-middle-x p-3" style="z-index: 1090;">
+    <div id="toastNotification" class="toast align-items-center text-white bg-dark border-secondary shadow-lg" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body" id="toastMessageText">
+          Acción realizada con éxito.
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Bootstrap 5 Bundle JS (Local with CDN fallback) -->
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <!-- Fallback in case local script has issue with submodules -->
+  <script>
+    if (typeof bootstrap === 'undefined') {
+      const script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js';
+      document.head.appendChild(script);
+    }
+  </script>
+
+  <!-- Application Custom Script -->
+  <script src="js/app.js"></script>
+
+</body>
+</html>

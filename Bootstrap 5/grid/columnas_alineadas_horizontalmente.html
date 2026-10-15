@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<title>Columnas Alineadas Horizontalmente</title>
+	<style>
+		.row {
+			background: #e8e8e8;
+			margin-top: 20px;
+		}
+
+		.columna {
+			background: #f2f2f2;
+			text-align: center;
+			padding: 10px;
+			border: 1px solid #4d5061;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row justify-content-start">
+			<div class="columna col-4">Columna 1</div>
+			<div class="columna col-4">Columna 2</div>
+		</div>
+
+		<div class="row justify-content-center">
+			<div class="columna col-4">Columna 1</div>
+			<div class="columna col-4">Columna 2</div>
+		</div>
+
+		<div class="row justify-content-end">
+			<div class="columna col-4">Columna 1</div>
+			<div class="columna col-4">Columna 2</div>
+		</div>
+
+		<div class="row justify-content-around">
+			<div class="columna col-4">Columna 1</div>
+			<div class="columna col-4">Columna 2</div>
+		</div>
+
+		<div class="row justify-content-between">
+			<div class="columna col-4">Columna 1</div>
+			<div class="columna col-4">Columna 2</div>
+		</div>
+
+		<div class="row justify-content-evenly">
+			<div class="columna col-4">Columna 1</div>
+			<div class="columna col-4">Columna 2</div>
+		</div>
+	</div>
+
+	<script src="../js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

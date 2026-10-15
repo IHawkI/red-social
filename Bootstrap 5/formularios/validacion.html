@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<title>Clases para Validacion</title>
+</head>
+<body>
+	<div class="container">
+		<div class="row mt-5">
+			<div class="col-6">
+				<form action="">
+					<label for="nombre" class="form-label">Nombre</label>
+					<input type="text" class="form-control is-valid" placeholder="Nombre" name="nombre" id="nombre">
+					<div class="valid-feedback">Correcto!</div>
+				</form>
+			</div>
+
+			<div class="col-6">
+				<form action="">
+					<label for="correo" class="form-label">Correo</label>
+					<input type="email" class="form-control is-invalid" placeholder="correo@correo.com" name="correo" id="correo">
+					<div class="invalid-feedback">Por favor introduce un correo valido.</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<script src="../js/bootstrap.bundle.js"></script>
+</body>
+</html>

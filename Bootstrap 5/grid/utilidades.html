@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<title>Utilidades para columnas</title>
+	<style>
+		.row {
+			background: #e8e8e8;
+			margin-top: 20px;
+		}
+
+		.columna {
+			background: #f2f2f2;
+			text-align: center;
+			padding: 10px;
+			border: 1px solid #4d5061;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<!-- Reordenamiento de columnas -->
+			<!-- order-1 al order-5 -->
+			<!-- .order-first -->
+			<!-- .order-last -->
+			<div class="columna col order-4 order-md-1">Columna 1</div>
+			<div class="columna col order-3 order-md-2">Columna 2</div>
+			<div class="columna col order-2 order-md-3">Columna 3</div>
+			<div class="columna col order-1 order-md-4">Columna 4</div>
+		</div>
+
+		<div class="row">
+			<div class="columna col-3 offset-3 offset-sm-6">Columna</div>
+		</div>
+
+		<div class="row">
+			<div class="columna col-3 offset-3">Columna 1</div>
+			<div class="columna col-3 offset-3">Columna 2</div>
+		</div>
+
+		<div class="row">
+			<div class="columna col-auto">Columna 1</div>
+			<div class="columna col-auto ms-auto">Columna 2</div>
+		</div>
+	</div>
+
+	<script src="../js/bootstrap.bundle.js"></script>
+</body>
+</html>

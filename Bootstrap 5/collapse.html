@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Collapse</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<div class="row mt-3">
+			<div class="col-6">
+				<a 
+					href="#contenido-1"
+					type="button"
+					class="btn btn-primary"
+					data-bs-toggle="collapse"
+					aria-expanded="false"
+					aria-controls="contenido-1"
+				>Información</a>
+				<div class="collapse mt-3" id="contenido-1">
+					<div class="card">
+						<div class="card-body">
+							<h2 class="card-title">Titulo</h2>
+							<p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus, impedit!</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-6">
+				<button 
+					type="button"
+					class="btn btn-primary"
+					data-bs-toggle="collapse"
+					data-bs-target="#contenido-2"
+					aria-expanded="false"
+					aria-controls="contenido-2"
+				>Información</button>
+				<div class="collapse mt-3" id="contenido-2">
+					<div class="card">
+						<div class="card-body">
+							<h2 class="card-title">Titulo</h2>
+							<p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus, impedit!</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> 
+	</div>
+
+	<script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

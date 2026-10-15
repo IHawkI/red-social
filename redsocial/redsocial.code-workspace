@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../__MACOSX/Bootstrap 5/practicas/red-social/img1"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "redsocial"
+	}
+}
